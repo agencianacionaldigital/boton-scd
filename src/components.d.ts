@@ -29,6 +29,43 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface BotonScd {
+      'text': string;
+      'title': string;
+      'url': string;
+    }
+  }
+
+  interface HTMLBotonScdElement extends StencilComponents.BotonScd, HTMLStencilElement {}
+
+  var HTMLBotonScdElement: {
+    prototype: HTMLBotonScdElement;
+    new (): HTMLBotonScdElement;
+  };
+  interface HTMLElementTagNameMap {
+    'boton-scd': HTMLBotonScdElement;
+  }
+  interface ElementTagNameMap {
+    'boton-scd': HTMLBotonScdElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'boton-scd': JSXElements.BotonScdAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BotonScdAttributes extends HTMLAttributes {
+      'text'?: string;
+      'title'?: string;
+      'url'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface MyComponent {
       'first': string;
       'last': string;
