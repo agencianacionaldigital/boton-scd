@@ -9,19 +9,11 @@ import { Component, Prop } from '@stencil/core';
 export class WebShare {
 
     @Prop() title: string;
-    @Prop() text: string;
     @Prop() url: string;
-
 
     // Ciclo de vida, el componente se ha cargado pero aún no se ha renderizado.
     // Sólo se llamará una vez.
     // Es buen sitio para hacer actualizaciones de último momento antes de que se renderice.
-    componentWillLoad() {
-        //this.showModal(this.isOpen);
-    }
-
-    componentDidLoad() {
-    }
 
     share() {
         // have to cast to any
@@ -30,7 +22,6 @@ export class WebShare {
         if ((navigator as any).share) {
             (navigator as any).share({
                 title: this.title,
-                text: this.text,
                 url: this.url,
             })
                 .then(() => console.log('Successful share'))
